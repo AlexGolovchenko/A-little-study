@@ -1,18 +1,18 @@
 //filter english company in the table 'testalex'
 function filterEng ()
 {
-	var testalex = new SCFile("testalex");
-	var res = testalex.doSelect("true");			//get line from the table 'testalex'
-	var regExp = /^[0-9A-z\s'\.,-\/#!$%\^&\*;:{}=\-_`~()]+$/g;		//only eng char | special char | num
+	let testalex = new SCFile("testalex");
+	let res = testalex.doSelect("true");		//get line from the table 'testalex'
+	let regExp = /^[0-9A-z\s'\.,-\/#!$%\^&\*;:{}=\-_`~()]+$/g;		//only eng char | special char | num
 	while (res == RC_SUCCESS) 		//while select success
 	{
-		var companyName = testalex["company.alias"];			//get value from the line
-		var result = regExp.test(companyName);
-		if (result) 			//if regExp true
+		let companyName = testalex["company.alias"];		//get value from the line
+		let result = regExp.test(companyName);
+		if (result) 		//if regExp true
 		{
 			print(testalex);
 		}
-		res = testalex.getNext();					//next line in the table
+		res = testalex.getNext();		//next line in the table
 	}
 }
 
@@ -25,23 +25,23 @@ function filterEng ()
 function replaceId ()
 {
 
-	var testalex = new SCFile("testalex");
-	var testalexResult = testalex.doSelect("true");
-	var testalexCompanyId;
-	var secompany = new SCFile("secompany");
-	var secompanyResult;
+	let testalex = new SCFile("testalex");
+	let testalexResult = testalex.doSelect("true");
+	let testalexCompanyId;
+	let secompany = new SCFile("secompany");
+	let secompanyResult;
 
 	while (testalexResult == RC_SUCCESS)
 	{
 		testalexCompanyId = testalex["company.id"];
-		secompanyResult = secompany.doSelect("company.id = \"" + testalexCompanyId + "\"");			// select  company.id="CPY00000123"
+		secompanyResult = secompany.doSelect("company.id = \"" + testalexCompanyId + "\"");		// select  company.id="CPY00000123"
 
 		if (secompanyResult == RC_SUCCESS)
 		{
-			testalex["company.id"] = secompany["company"];			//replace values
+			testalex["company.id"] = secompany["company"];		//replace values
 		} else
 		{
-			testalex["company.id"] = "x";			//replace values
+			testalex["company.id"] = "x";		//replace values
 		};
 		testalex.doAction("save");
 		testalexResult = testalex.getNext();
@@ -57,15 +57,15 @@ function replaceId ()
 
 function deleteX ()
 {
-	var testalex = new SCFile("testalex");
-	var testalexResult = testalex.doSelect("true");
+	let testalex = new SCFile("testalex");
+	let testalexResult = testalex.doSelect("true");
 
 	while (testalexResult == RC_SUCCESS)
 	{
 		testalexCompanyId = testalex["company.id"];
 		if (testalexCompanyId == "x")
 		{
-			testalex.doAction("delete");			//to delete value == 'x'
+			testalex.doAction("delete");		//to delete value == 'x'
 		};
 
 		testalexResult = testalex.getNext();
