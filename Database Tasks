@@ -16,9 +16,7 @@ function filterEng ()
 	}
 }
 
-
 // ***
-
 
 //replace id->company from a table 'secompany' to the table 'testalex'
 
@@ -26,8 +24,9 @@ function replaceId ()
 {
 
 	let testalex = new SCFile("testalex");
-	let testalexResult = testalex.doSelect("true");
-	let testalexCompanyId;
+let testalexResult = testalex.doSelect("true");
+
+let testalexCompanyId;
 	let secompany = new SCFile("secompany");
 	let secompanyResult;
 
@@ -39,7 +38,7 @@ function replaceId ()
 		if (secompanyResult == RC_SUCCESS)
 		{
 
-testalex["company.id"] = secompany["company"];		//replace values
+testalex["company.id"] = secompany["company"];		//replace value
 		} else
 		{
 			testalex["company.id"] = "x";		//replace values
@@ -50,12 +49,9 @@ testalex["company.id"] = secompany["company"];		//replace values
 };
 }
 
-
 //***
 
-
 //delete 'x' from testalex["company"]
-
 
 function deleteX ()
 {
@@ -73,7 +69,6 @@ function deleteX ()
 		testalexResult = testalex.getNext();
 	};
 };
-//***
 
 //check user's lead capability, if it's not, add it 
 
