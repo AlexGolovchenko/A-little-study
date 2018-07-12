@@ -1,4 +1,4 @@
-//filter english company in the table 'testalex'
+		.//filter english company in the table 'testalex'
 function filterEng ()
 {
 	let testalex = new SCFile("testalex");
@@ -58,7 +58,7 @@ function replaceId ()
 function deleteX ()
 {
 	let testalex = new SCFile("testalex");
-	let testalexResult = testalex.doSelect("true");
+	let testalexResult = testalex.doSelect("true");		//'true' is evil
 
 	while (testalexResult == RC_SUCCESS)
 	{
