@@ -1,14 +1,12 @@
-/*Task:
-Write a script in JS, which will delete 1 to infinite random words. You should delete reserved JS words only.
-*/
+/*Task: Write a script in JS, which will delete 1 to infinite random words. You should delete reserved JS words only.*/
 
 function cutJS() {
-	var str = `Hello world break return var break case case break var`;
+	var str = `Hello break Hello return Hello var Hello break Hello var Hello case Hello break Hello var`;
 	var arr = str.split(" ");
 	var length = arr.length; 
 	var num; 
 	var newTempArr = new Array();
-	var max = 3;  
+	var max = 3;
 	var min = 1;
 	var rand = Math.floor(Math.random() * (max + 1 - min) + min);	//1 or 2 or 3
 	var reserved = new Array ("var", "return", "break", "case", "let", "switch", "for", "while");	//JS reserved words
@@ -16,8 +14,8 @@ function cutJS() {
 	var startIndex = 0;
 	var newArr = new Array ();
 	var newStr;
-		
-	for (i=0; i<length; i++) {
+
+	for (var i=0; i<length; i++) {
 		if (reserved.indexOf(arr[i]) != -1) {
 			tempArr.push(i);	//indexes reserved words
 		}; 
@@ -33,8 +31,8 @@ function cutJS() {
 		startIndex = newTempArr[i] + 1;
 	};
 	newArr.push(arr.slice(startIndex));
-	newStr = newArr.toString();
-	console.log(newStr);
+  	newArr = newArr.filter(function(newArr) {return newArr;});	//delete Null
+	newArr = newArr.join(" "); 
 };
-//cutJS();
+cutJS();  
       
