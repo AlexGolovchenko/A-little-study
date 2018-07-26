@@ -1,38 +1,44 @@
-/*Task: Write a script in JS, which will delete 1 to infinite random words. You should delete reserved JS words only.*/
+/*Task:
+Write a script in JS, which will delete 1 to infinite random words. You should delete reserved JS words only.
+*/
 
-function cutJS() {
-	var str = `Hello break Hello return Hello var Hello break Hello var Hello case Hello break Hello var`;
-	var arr = str.split(" ");
-	var length = arr.length; 
-	var num; 
-	var newTempArr = new Array();
-	var max = 3;
-	var min = 1;
-	var rand = Math.floor(Math.random() * (max + 1 - min) + min);	//1 or 2 or 3
-	var reserved = new Array ("var", "return", "break", "case", "let", "switch", "for", "while");	//JS reserved words
-	var tempArr = new Array ();
-	var startIndex = 0;
-	var newArr = new Array ();
-	var newStr;
-
-	for (var i=0; i<length; i++) {
-		if (reserved.indexOf(arr[i]) != -1) {
-			tempArr.push(i);	//indexes reserved words
-		}; 
+function cutJS (min = 1, max = 3, str) {
+	if (typeof str == "undefined") {
+			str = `Hello break Hello return Hello var Hello break Hello var Hello case Hello break Hello var`;
+	};
+	
+	if (typeof str !== "string") {
+		console.log("invalid string");
+		return void 0;
 	};
 
-	length = tempArr.length;
-	num = Math.floor(Math.random() * length);	//random num in tempArr
-	newTempArr = tempArr.slice(num, num + rand); // what we need to del from arr
-	length = newTempArr.length;
+	if (max > min && typeof min == "number" && typeof max == "number") {
+		var arr = str.split(" ");
+		var rand = Math.floor(Math.random() * (max + 1 - min) + min);	//1 or 2 or 3
+		var reserved = new Array ("var", "return", "break", "case", "let", "switch", "for", "while");	//JS reserved words
+		var tempArr = new Array ();
+		var newArr = new Array ();
+		var newStr;
 
-	for (i=0; i<length; i++) {
-		newArr.push(arr.slice(startIndex, newTempArr[i]));
-		startIndex = newTempArr[i] + 1;
+		for (var i=0; i<arr.length; i++) {
+			if (reserved.indexOf(arr[i]) != -1) {
+				tempArr.push(i);	//indexes reserved words
+			};
+		};
+
+		var num = Math.floor(Math.random() * tempArr.length);	//random num in tempArr
+		tempArr = tempArr.slice(num, num + rand); //indexes what we need to del from arr
+
+		for (i=0; i<arr.length; i++) {
+			if (tempArr.indexOf(i) == -1) {
+				newArr.push(arr[i]);
+			};
+		};
+
+		newStr = newArr.join(" ");
+		console.log(newStr);
+	} else
+	{
+		console.log("invalid numbers");
 	};
-	newArr.push(arr.slice(startIndex));
-  	newArr = newArr.filter(function(newArr) {return newArr;});	//delete Null
-	newArr = newArr.join(" "); 
 };
-cutJS();  
-      
