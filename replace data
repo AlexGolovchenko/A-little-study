@@ -1,4 +1,4 @@
-// replace some values in database
+// replace some values in database by values another db's
 function replaceDb () {
 	var company = new SCFile ("company");
 	var seSG = new SCFile ("sesitegroup");
