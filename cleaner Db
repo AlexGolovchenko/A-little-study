@@ -1,0 +1,23 @@
+/*Task: replace wrong values and save db
+*/
+function replace(table) {
+	var arr1 = new Array ("SAP BPC");	//wrong values
+	var arr2 = new Array ("sap bpc");	//right values
+	var obj = new SCFile(table);
+	var resObj = obj.doSelect("true");
+	while (resObj == RC_SUCCESS) {
+		var len = obj.toArray().length;
+		var n;
+		for (var i=0; i<len; i++) {
+			n = arr1.indexOf(obj[i]);
+			if (n != -1) {
+				obj[i] = arr2[n];	//correction values
+ 			}
+		}
+		obj.doAction("save");
+		resObj = obj.getNext();
+
+	}
+	print(obj);
+};
+//replace("secorecategorization");
