@@ -1,0 +1,23 @@
+/*replace wrong values from object
+*/
+function replace() {
+	var arr1 = new Array ("- Global -", "Demo");
+	var arr2 = new Array ("global", "demo");
+
+	var obj = {
+		company : "Global",
+		name : "Demo",
+		id : 2,
+		instanceid : "CPY000456"
+	}
+
+	var n;
+	for (var key in obj) {
+		n = arr1.indexOf(obj[key]);
+		if (n != -1) {
+			obj[key] = arr2[n];
+ 		}
+	}
+	console.log(obj);
+};
+//replace();
