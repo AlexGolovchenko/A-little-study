@@ -1,3 +1,4 @@
+
 /*Task: replace wrong values and save db
 */
 function replace(table) {
@@ -21,3 +22,28 @@ function replace(table) {
 	print(obj);
 };
 //replace("secorecategorization");
+
+/* the same task with underscore function */
+
+var _ = lib.Underscore.require();	//connect library 
+
+function replace(table) {
+	var arr1 = new Array ("SAP BPC");	//wrong values
+	var arr2 = new Array ("132sap bpc");	//right values
+	var obj = new SCFile(table);
+	var resObj = obj.doSelect("true");
+print(obj);
+	while (resObj == RC_SUCCESS) {
+	var len = obj.toArray().length;
+		var n;
+		for (var i=0; i<len; i++) {
+			n = _.indexOf(arr1, obj[i], false);
+			if (n != -1) {
+				obj[i] = arr2[n];	//correction values
+ 			}
+		}
+		obj.doAction("save");
+		resObj = obj.getNext();
+	}
+	print(obj);
+};
