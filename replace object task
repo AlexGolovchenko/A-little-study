@@ -1,9 +1,9 @@
 /*replace wrong values from object
 */
 function replace() {
-	var arr1 = new Array ("- Global -", "Demo");
-	var arr2 = new Array ("global", "demo");
-
+	var arr1 = new Array ("- Global -", "Demo");	//wrong values
+	var arr2 = new Array ("global", "demo");	//right values
+//target object
 	var obj = {
 		company : "Global",
 		name : "Demo",
@@ -15,7 +15,7 @@ function replace() {
 	for (var key in obj) {
 		n = arr1.indexOf(obj[key]);
 		if (n != -1) {
-			obj[key] = arr2[n];
+			obj[key] = arr2[n];	//correction
  		}
 	}
 	console.log(obj);
