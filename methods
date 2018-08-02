@@ -1,0 +1,24 @@
+
+/* task: handmade method filter()
+*/
+const c = function (x) {console.log(x)}
+
+function myFilter (arr, cb) {
+	var res = [];
+	for (var i=0; i<arr.length; i++) {
+		if (cb(arr[i])) {
+			res.push(arr[i]);
+		}
+	}
+	return res;
+}
+
+
+/* task: handmade method forEach()
+*/
+
+function myForEach (arr, cb, thisVal) {
+	for (var i=0; i<arr.length; i++) {
+		cb(thisVal, arr[i], i, arr)
+	}
+}
