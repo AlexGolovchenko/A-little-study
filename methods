@@ -1,4 +1,3 @@
-
 /* task: handmade method filter()
 */
 
@@ -22,9 +21,11 @@ function myFilter (arr, cb)
 /* task: handmade method forEach()
 */
 
+
 function myForEach (arr, cb, thisVal) 
 {
-	for (var i=0; i<arr.length; i++) 
+
+for (var i=0; i<arr.length; i++) 
 	{
 		cb(arr[i], i, arr, thisVal)
 	}
@@ -48,6 +49,7 @@ function myMap (arr, cb, thisVal)
 //c(myMap([9,4,4], function (elem) {return (elem*2)}));	// check myMap => [18,8,8]
 
 /* task: handmade method every()
+
 */
 
 function myEvery (arr, cb, thisVal) {
@@ -78,3 +80,47 @@ function mySome (arr, cb, thisVal) {
 };
 
 //c(mySome([5,5,5], function (elem) {return elem === 5}));	//true
+
+/* task: handmade method reduce() without continue
+*/
+
+function myReduceV1 (arr, cb, startVal) {
+	var acc, i=0;
+	if (startVal == undefined) 
+	{
+		acc = arr[0];
+		i=1;
+	} else 
+	{
+		acc = startVal;
+	}
+	for (; i<arr.length; i++)
+	{
+		acc = cb(acc, arr[i], i, arr);
+	}
+	return acc;
+}
+
+//c(myReduce([10,10,10], function (acc, elem) {return acc + elem}));	//30
+//c(myReduce([10,10,10], function (acc, elem) {return acc + elem}, 0));	//30
+
+/* task: handmade method reduce() best
+*/
+
+function myReduce (arr, cb, startVal) {
+	var acc = startVal;
+	for (i=0; i<arr.length; i++)
+	{
+		if (acc == undefined) 
+		{
+			acc = arr[i];
+			continue;
+		}
+		acc = cb(acc, arr[i], i, arr);
+	}
+	return acc;
+}
+
+//c(myReduce([10,10,10], function (acc, elem) {return acc + elem}));	//30
+//c(myReduce([10,10,10], function (acc, elem) {return acc + elem}, 0));	//30
+
