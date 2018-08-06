@@ -1,3 +1,4 @@
+
 /* task: handmade method filter()
 */
 
@@ -60,7 +61,7 @@ function myEvery (arr, cb, thisVal) {
 	return true;
 }
 
-c(myEvery([5,4,5], function (elem) {return elem === 5}));	//false
+//c(myEvery([5,4,5], function (elem) {return elem === 5}));	//false
 
 /* task: handmade method some()
 */
