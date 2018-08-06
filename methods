@@ -45,3 +45,35 @@ function myMap (arr, cb, thisVal)
 }
 
 //c(myMap([9,4,4], function (elem) {return (elem*2)}));	// check myMap => [18,8,8]
+
+/* task: handmade method every()
+*/
+
+function myEvery (arr, cb, thisVal) {
+	for (var i=0; i<arr.length; i++)
+	{
+		if (!cb(arr[i], i, arr, thisVal))
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+c(myEvery([5,4,5], function (elem) {return elem === 5}));	//false
+
+/* task: handmade method some()
+*/
+
+function mySome (arr, cb, thisVal) {
+	for (var i=0; i<arr.length; i++)
+	{
+		if (cb(arr[i], i, arr, thisVal))
+		{
+			return true;
+		}
+	}
+	return false;
+};
+
+//c(mySome([5,5,5], function (elem) {return elem === 5}));	//true
