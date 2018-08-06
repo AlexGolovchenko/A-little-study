@@ -1,11 +1,15 @@
 /* task: handmade method filter()
 */
-const c = function (x) {console.log(x)};
 
-function myFilter (arr, cb) {
+const c = function (x) {console.log(x)};	//short console.log
+
+function myFilter (arr, cb) 
+{
 	var res = [];
-	for (var i=0; i<arr.length; i++) {
-		if (cb(arr[i])) {
+	for (var i=0; i<arr.length; i++) 
+	{
+		if (cb(arr[i])) 
+		{
 			res.push(arr[i]);
 		}
 	}
@@ -17,8 +21,10 @@ function myFilter (arr, cb) {
 /* task: handmade method forEach()
 */
 
-function myForEach (arr, cb, thisVal) {
-	for (var i=0; i<arr.length; i++) {
+function myForEach (arr, cb, thisVal) 
+{
+	for (var i=0; i<arr.length; i++) 
+	{
 		cb(arr[i], i, arr, thisVal)
 	}
 }
@@ -28,9 +34,11 @@ function myForEach (arr, cb, thisVal) {
 /* task: handmade method map()
 */
 
-function myMap (arr, cb, thisVal) {
+function myMap (arr, cb, thisVal) 
+{
 	var res = [];
-	for (var i=0; i<arr.length; i++) {
+	for (var i=0; i<arr.length; i++) 
+	{
 		res.push(cb(arr[i], i, arr, thisVal));
 	}
 	return res;
