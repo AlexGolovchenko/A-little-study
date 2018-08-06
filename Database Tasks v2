@@ -6,3 +6,42 @@ function countUserData (user) {
 print(count);
 
 };
+
+//check priority 
+
+var priorities = {
+	"Critical": "Критический",
+	"High": "Высокий",
+	"Medium": "Средний",
+	"Low":"Низкий"
+}
+
+var priority = priorities[$RECORD["priority.code"]]	//$RECORD is a date of current table
+
+
+//***
+
+//check location street
+
+
+var street = "";
+
+var loc = new SCFile("location");
+var resLoc = loc.doSelect("location.code=\"" + $RECORD["customer_location"] + "\"");
+if (resLoc == RC_SUCCESS) 
+{
+	street = loc["address"].join(' ');
+}
+
+
+//***
+
+//check group name
+
+var group = "";
+var assign = new SCFile("assignment");
+var resAssign = assign.doSelect("se.id=\"" + $RECORD["se_assignment_group"] + "\"");
+if (resAssign == RC_SUCCESS) 
+{
+	group = assign["name"];
+}
