@@ -1,6 +1,7 @@
 //count user's data
 
-function countUserData (user) {
+function countUserData (user) 
+{
 	var data = new SCRecordList("secorecategorization", new QueryCond("sysmoduser", EQ, user));
 	var count = data.getCount();
 print(count);
