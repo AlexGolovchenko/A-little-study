@@ -25,7 +25,7 @@ function replace(table)
 	}
 	print(obj);
 };
-//replace("secorecategorization");
+.//replace("secorecategorization");
 
 //*****************************************************************************************************
 
@@ -56,3 +56,34 @@ print(obj);	//before
 	}
 	print(obj);	//after
 };
+
+
+//********************************************************************************************
+
+/*Task: keys should be lowercase, dot instead space inside. change any words from arrays
+short solution*/
+
+function c(x) {
+	console.log(x);
+}
+
+function replacev2() {
+	var arr1 = ['OR', 'AND', '\'Assigned Group\'']
+	var arr2 = ['or', 'and', 'assigned.group']
+	var str = "'Reported Source' = \"Web\"  OR 'Reported Source' = \"Email\" AND 'Assigned Group' = \"1-Call Center SD\"";	//string for check
+	
+	for (var i = 0 ; i< arr1.length; i++) {
+		str = str.replace(new RegExp(" " + arr1[i] + " ", 'g'), ' ' + arr2[i] + ' ')
+		str = str.replace(new RegExp(' = ', 'g'), ' == ')
+	}
+	//c(str)
+}
+
+
+//********************************************************************************************************
+
+
+
+
+
+//replacev2();
