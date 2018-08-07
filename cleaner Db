@@ -27,6 +27,8 @@ function replace(table)
 };
 //replace("secorecategorization");
 
+//*****************************************************************************************************
+
 /* the same task with an underscore function */
 
 var _ = lib.Underscore.require();	//connect library 
