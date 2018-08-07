@@ -99,8 +99,8 @@ function c(x) {
 }	
 
 function replace() {
-	var arr1 = new Array ('OR', 'AND');	//wrong values
-	var arr2 = new Array ('or', 'and');	//right values
+	var arr1 = new Array ('OR', 'AND', '=');	//wrong values
+	var arr2 = new Array ('or', 'and', '==');	//right values
 	var str = "\'Reported Source\' = \"Web\"  OR \'Reported Source\' = \"Email\" AND \'Assigned Group\' = \"1-Call Center SD\"";	//string for check
 
 	var re = new RegExp("'([A-z0-9 ]*)'", 'g');
