@@ -37,10 +37,10 @@ function c(x) {
 }
 
 function checkASCII ( str ) {
-	c(str.split('').reduce((acc, elem) => elem.codePointAt(0) % 3 ? ++acc : acc, 0))
+	c(str.split('').reduce((acc, elem) => elem.codePointAt(0) % 3 ? acc : ++acc, 0))
 }
 
-//checkASCII('12345qwerty');	//9
+//checkASCII('12345qwerty');	//2
 
 /*18. you have a random string. you should count characters in the string, which have ASCII multiple of three
 without using loops (for, while, do) and declare new variable. write a compact code asap.
@@ -48,10 +48,10 @@ the same task, dont using split
 */
 
 function checkASCII2 ( str ) {
-	c(Array.prototype.reduce.call(str, (acc, elem) => elem.codePointAt(0) % 3 ? ++acc : acc, 0))	//9
+	c(Array.prototype.reduce.call(str, (acc, elem) => elem.codePointAt(0) % 3 ? acc : ++acc, 0))
 }
 
-//checkASCII2('12345qwerty');	//9
+//checkASCII2('12345qwerty');	//2
 
 //*******************************************************
 
