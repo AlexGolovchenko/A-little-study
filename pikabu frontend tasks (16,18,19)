@@ -1,3 +1,5 @@
+/*link: https://pikabu.ru/page/interview/frontend/
+*/
 /*16. using RegExp check URL. Criteries:
 - protocols: http, https, а также ftp;
 - subdomen should be one of them: m, m-test, c1...c100;
