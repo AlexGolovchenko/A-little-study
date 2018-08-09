@@ -1,0 +1,57 @@
+/*16. using RegExp check URL. Criteries:
+- protocols: http, https, а также ftp;
+- subdomen should be one of them: m, m-test, c1...c100;
+- domen must be "pikabu";
+- URL port can be 8080;
+- URL mustn't have anchor, path or parameters.
+for example your valid URL will be: https://c52.pikabu.lh:8080 
+*/
+
+//console.log
+function c (x) {
+	console.log(x);
+}
+
+function url ( str ) {
+	var re = /(https?|ftp):\/\/(m-test|m|c(100|[1-9][0-9]|[1-9]))[.]pikabu[.][a-z]*(:8080)?$/;
+	if (re.test(str)) 
+	{
+		return true;
+	} else
+	{
+		return false;
+	}
+}
+
+//c(url('http://c2.pikabu.lh:8080'));
+
+//*********************************************************
+
+/*18. you have a random string. you should count characters in the string, which have ASCII multiple of three
+without using loops (for, while, do) and declare new variable. write a compact code asap.
+*/
+
+//console.log
+function c(x) {
+	console.log(x);
+}
+
+function checkASCII ( str ) {
+	c(str.split('').reduce((acc, elem) => elem.codePointAt(0) % 3 ? ++acc : acc, 0))
+}
+
+//checkASCII('12345qwerty');	//9
+
+/*18. you have a random string. you should count characters in the string, which have ASCII multiple of three
+without using loops (for, while, do) and declare new variable. write a compact code asap.
+the same task, dont using split
+*/
+
+function checkASCII2 ( str ) {
+	c(Array.prototype.reduce.call(str, (acc, elem) => elem.codePointAt(0) % 3 ? ++acc : acc, 0))	//9
+}
+
+//checkASCII2('12345qwerty');	//9
+
+//*******************************************************
+
