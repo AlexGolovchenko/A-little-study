@@ -23,6 +23,7 @@ example HTML: <div class="example">Дважды <span>два</span> - пять</
 </body>
 </html>
 
+
 //*********************************************************
 
 /*16. using RegExp check URL. Criteries:
@@ -51,6 +52,58 @@ function url ( str ) {
 }
 
 //c(url('http://c2.pikabu.lh:8080'));
+
+//*********************************************************
+
+//***HTML***
+
+<!--
+17. Предложите стили (LESS или SASS) для списка ниже, чтобы привести его к виду, как показано на скриншоте: 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8" >
+	<title>Page Title</title>
+</head>
+<body>
+
+<div class="example">
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2
+            <ul>
+                <li data-value="1">sub-item</li>
+                <li data-value="2">sub-item</li>
+                <li data-value="3">sub-item</li>
+            </ul>
+        </li>
+        <li>Item 3
+            <ul>
+                <li data-value="4">sub-item</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+
+//*********************LESS****
+
+.example {
+  li:first-child {
+  font-weight: bold;
+}
+  li ul {
+    li {
+  list-style-type: none; 
+    }
+    li:before {
+  content: "\25C6";
+    }
+  }
+}
 
 //*********************************************************
 
