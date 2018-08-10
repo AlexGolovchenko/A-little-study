@@ -1,5 +1,30 @@
 /*link: https://pikabu.ru/page/interview/frontend/
 */
+
+//*********************** HTML ^^ ********************************
+<!--
+14. You have a piece of HTML code. Using pure JS change text after tag <span> only.
+example HTML: <div class="example">Дважды <span>два</span> - пять</div>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Page Title</title>
+</head>
+<body>
+
+<div id="example">Дважды <span>два</span> - пять</div>
+<script>
+	document.getElementById("example").childNodes["2"].textContent = " - четыре";
+</script>
+
+</body>
+</html>
+
+//*********************************************************
+
 /*16. using RegExp check URL. Criteries:
 - protocols: http, https, а также ftp;
 - subdomen should be one of them: m, m-test, c1...c100;
