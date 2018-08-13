@@ -161,7 +161,8 @@ function func (input) {
 		if (input[i] % 2) {
 			one.push(input[i])
 		} else {
-			two.push(input[i])
+
+two.push(input[i])
 		}
 	}
 	c([...two.sort(decNum), ...one.sort(incNum)]);
@@ -181,5 +182,37 @@ function x (arr) {
 
 //************************************
 
+/*20. Offer your option BaseClass for success 
+*/
+
+class BaseClass {
+	
+	get a() {
+		return -1 * this._a
+	}
+	set a(value) {
+		this._a = value
+	}
+	get b() {
+		return -1 * this._b
+	}
+	set b(value) {
+		this._b = value
+	}
+	
+}
+class MyClass extends BaseClass {
+    result(a, b) {
+        this.a = a;
+        this.b = b;
+        return 100 - this.a + this.b;
+    }
+}
+
+let m = new MyClass();
+console.log(m.result(10, 20) === 90);
+console.log(m.result(20, 10) === 110);
+
+//**********************************************************************
 
 
