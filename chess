@@ -93,3 +93,23 @@ function triangle (x) {
 //##
 //###
 //etc
+
+/************************
+
+/*Task: write a function for successfully comment in log -> // Петя Иванов
+*/
+function User () {
+  //your code:
+  let str1, str2;
+  this.setFirstName = (str) => {str === false ? console.log ('you didnt write your First name') : str1 = str};
+  this.setSurname = (str) => {str === false ? console.log ('you didnt write your Surname') : str2 = str};
+  this.getFirstName = () => str1;
+  this.getSurname = () => str2;
+  this.getFullName = () => str1 + ' ' + str2;
+}
+
+let user = new User();
+user.setFirstName("Петя");
+user.setSurname("Иванов");
+
+//console.log( user.getFullName() ); // Петя Иванов
