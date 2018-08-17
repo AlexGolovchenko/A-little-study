@@ -1,0 +1,95 @@
+/*Task: log chessboard of cell '#' 8x8
+*/
+function chess() {
+  let cell = '#'
+  let empty = ' '
+  let temp1 = ''
+  let temp2 = ''
+  for (let i = 1; i < 5; i++) {
+    if (i % 1) {
+      temp1 += empty + cell
+    } else {
+      temp1 += cell + empty
+    }
+  }
+  for (let i = 1; i < 5; i++) {
+    if (i % 1) {
+      temp2 += cell + empty
+    } else {
+      temp2 += empty + cell
+    }
+  }
+  for (let i = 0; i < 4; i++) {
+    console.log(temp1 + '\n' + temp2);
+  }
+}
+//chess(); //->
+//# # # #
+// # # # #
+//# # # #
+//etc
+
+//************************
+
+
+/*Task: convert kelvin -> celsius -> fahrenheit -> newton
+*/
+
+function temperature () {
+  // current temperature in klevin degrees
+  const kelvin = 0;
+  // convert kelvin to celsius
+  const celsius = kelvin - 293;
+  // convert celsius to fahrenheit
+  let fahrenheit = celsius * ( 9  / 5 ) + 32;
+  //round temperature in fahrenheit degrees
+  fahrenheit = Math.floor(fahrenheit);
+  let newton = celsius * ( 33 / 100 );
+  newton = Math.floor(newton);
+  console.log(`The temperature ${fahrenheit} degrees Fahrenheit.`);
+  console.log(`The temperature ${newton} degrees Newton.`);
+}
+
+//**************
+
+/*Task: convert my age to dog's age
+*/
+function age () {
+  // create my current age
+  const myAge = 25;
+  // the first two years
+  let earlyYears = 2;
+  earlyYears *= 10.5;
+  let laterYears = myAge - 2;
+  laterYears *= 4;
+  let myAgeInDogYears = earlyYears + laterYears;
+  let myName = "Alex".toLowerCase();
+  console.log(`My name is ${myName}. I am ${myAgeInDogYears} years old in dog years.`);
+}
+
+//*******************
+
+/*Tast: write loop for printing triangle of cell
+*/
+function triangle (x) {
+  if (!x) {
+    x = 8;
+  }
+  if (typeof x !== 'number') {
+    console.log('Error: wrong data!');
+    return;
+  }
+  let cell = '#';
+  let temp = '';
+  let i=0;
+  while (i<x) {
+    temp += cell;
+    console.log(temp);
+    i++;
+  }
+}
+//triangle(4); // ->
+//#
+//##
+//###
+//etc
