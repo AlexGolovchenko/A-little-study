@@ -1,40 +1,35 @@
+const log = console.log;
 /*Task: log chessboard of cell '#' 8x8
 */
+
 function chess() {
-  let cell = '#'
-  let empty = ' '
+  let cell = '#'  //cell inside
+  let empty = ' ' //empty inside
   let temp1 = ''
   let temp2 = ''
-  for (let i = 1; i < 5; i++) {
-    if (i % 1) {
-      temp1 += empty + cell
+  for (let i = 0; i < 8; i++) {
+    if (i % 2) {
+      temp1 += empty;
+      temp2 += cell;
     } else {
-      temp1 += cell + empty
-    }
-  }
-  for (let i = 1; i < 5; i++) {
-    if (i % 1) {
-      temp2 += cell + empty
-    } else {
-      temp2 += empty + cell
+      temp1 += cell;
+      temp2 += empty;
     }
   }
   for (let i = 0; i < 4; i++) {
-    console.log(temp1 + '\n' + temp2);
+    log(temp1 + '\n' + temp2);
   }
 }
-//chess(); //->
-//# # # #
+// chess(); //->
 // # # # #
-//# # # #
-//etc
+//  # # # #
+// # # # #
+// etc
 
 //************************
 
-
 /*Task: convert kelvin -> celsius -> fahrenheit -> newton
 */
-
 function temperature () {
   // current temperature in klevin degrees
   const kelvin = 0;
@@ -46,13 +41,14 @@ function temperature () {
   fahrenheit = Math.floor(fahrenheit);
   let newton = celsius * ( 33 / 100 );
   newton = Math.floor(newton);
-  console.log(`The temperature ${fahrenheit} degrees Fahrenheit.`);
-  console.log(`The temperature ${newton} degrees Newton.`);
+  log(`The temperature ${fahrenheit} degrees Fahrenheit.`);
+  log(`The temperature ${newton} degrees Newton.`);
 }
+// temperature();
 
-//**************
+// **************
 
-/*Task: convert my age to dog's age
+/*Task: convert my age to dog's age. the first 2 dogs years = 10,5 humans. the others - 4.
 */
 function age () {
   // create my current age
@@ -64,17 +60,15 @@ function age () {
   laterYears *= 4;
   let myAgeInDogYears = earlyYears + laterYears;
   let myName = "Alex".toLowerCase();
-  console.log(`My name is ${myName}. I am ${myAgeInDogYears} years old in dog years.`);
+  log(`My name is ${myName}. I am ${myAgeInDogYears} years old in dog years.`);
 }
+// age();
 
-//*******************
+// *******************
 
 /*Tast: write loop for printing triangle of cell
 */
-function triangle (x) {
-  if (!x) {
-    x = 8;
-  }
+function triangle (x=8) {
   if (typeof x !== 'number') {
     console.log('Error: wrong data!');
     return;
@@ -84,32 +78,51 @@ function triangle (x) {
   let i=0;
   while (i<x) {
     temp += cell;
-    console.log(temp);
+    log(temp);
     i++;
   }
 }
-//triangle(4); // ->
-//#
-//##
-//###
-//etc
+// triangle(4); // ->
+// #
+// ##
+// ###
+// etc
 
-/************************
+// *********************
 
-/*Task: write a function for successfully comment in log -> // Петя Иванов
+/*Task: write a function User for successfully comment in log -> // Alex Golovchenko
 */
 function User () {
-  //your code:
   let str1, str2;
-  this.setFirstName = (str) => {str === false ? console.log ('you didnt write your First name') : str1 = str};
-  this.setSurname = (str) => {str === false ? console.log ('you didnt write your Surname') : str2 = str};
+  this.setFirstName = str => {str === false ? console.log ('you didnt write your First name') : str1 = str};
+  this.setSurname = str => {str === false ? console.log ('you didnt write your Surname') : str2 = str};
   this.getFirstName = () => str1;
   this.getSurname = () => str2;
   this.getFullName = () => str1 + ' ' + str2;
 }
 
-let user = new User();
-user.setFirstName("Петя");
-user.setSurname("Иванов");
+// let user = new User();
+// user.setFirstName("Alex");
+// user.setSurname("Golovchenko");
+// log( user.getFullName() ); // Alex Golovchenko
 
-//console.log( user.getFullName() ); // Петя Иванов
+//***********************
+
+/*create CoffeeMachine with power and capacity, include getter for power, setter for water and check it, getter for water.
+*/
+function CoffeeMachine(power, capacity) {
+  this.getPower = () => power
+  this.setWaterAmount = amount => {
+    amount < 0 ? log ("value must be positive") : false;
+    amount > capacity ? log ("you cant to add more water, than " + capacity) : false;
+    waterAmount = amount;
+  };
+  this.getWaterAmount = () => waterAmount
+}
+
+// let coffe = new CoffeeMachine (4000,500);
+// coffe.setWaterAmount(600); //-> Нельзя залить воды больше, чем 500
+// coffe.setWaterAmount(-400); //-> Значение должно быть положительным
+// coffe.setWaterAmount(400);
+// log ( coffe.getWaterAmount() ); //-> 400
+// log( coffe.getPower() ); //-> 4000
