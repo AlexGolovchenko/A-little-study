@@ -1,0 +1,235 @@
+@charset "UTF-8";
+/* Eric Meyer's CSS Reset */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\000036}}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000317}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000321}}
+body {
+  line-height: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000325}}
+ol,
+ul {
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000329}}
+blockquote,
+q {
+  quotes: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000333}}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000338}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000345}}
+html {
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000349}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000353}}
+body {
+  font: 12px/18px Arial, sans-serif;
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000358}}
+.wrapper {
+  min-width: 800px;
+  max-width: 1366px;
+  margin: 0 auto;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+/* Header
+-----------------------------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000370}}
+.header {
+  height: 150px;
+  background: #a7a7a7;
+}
+/* Middle
+-----------------------------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000378}}
+.middle {
+  font-size: 1.2em;
+  width: 100%;
+  padding: 50px 0 150px;
+  position: relative;
+  background: #fffff0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000386}}
+.middle:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000392}}
+#an {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\0000396}}
+.container {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\00003102}}
+.content {
+  padding: 0 270px 0 270px;
+}
+/* Left Sidebar
+-----------------------------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\00003109}}
+.left-sidebar {
+  float: left;
+  width: 250px;
+  margin-left: -100%;
+  position: relative;
+  background: #fffff0;
+}
+/* Right Sidebar
+-----------------------------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\00003120}}
+.right-sidebar {
+  float: left;
+  width: 250px;
+  margin-left: -250px;
+  position: relative;
+  background: #fffff0;
+}
+/* Footer
+-----------------------------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Homr\/Desktop\/A-little-study\/converter USD-RUB\/style\.less}line{font-family:\00003131}}
+.footer {
+  margin: -150px auto 0;
+  min-width: 800px;
+  max-width: 1366px;
+  height: 150px;
+  background: #a7a7a7;
+  position: relative;
+}
