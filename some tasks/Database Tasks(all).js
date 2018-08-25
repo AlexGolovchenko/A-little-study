@@ -16,7 +16,27 @@ function filterEng() {
 }
 
 //****************************************************
+// replace some values in database by values another db's
 
+function replaceDb() {
+  var company = new SCFile("company");
+  var seSG = new SCFile("sesitegroup");
+  var resSeSG = seSG.doSelect("true"); //select from db, typeof => object
+  var fil = new SCFile("sefilial");
+
+  while (resSeSG == RC_SUCCESS) {
+    company.doSelect("company=\"" + seSG["company"] + "\""); //select the same values
+    seSG["company"] = company["customer.id"]; //replace values
+
+    fil.doSelect("filial=\"" + seSG["region"] + "\""); //select the same values
+    seSG["region"] = fil["region.id"]; //replace values
+
+    seSG.doAction("save"); //save changes
+    resSeSG = seSG.getNext(); //get next data object
+  };
+}
+
+//****************************************************
 //replace id->company from a table 'secompany' to the table 'testalex'
 
 function replaceId() {
@@ -45,7 +65,6 @@ function replaceId() {
 }
 
 //****************************************************
-
 //delete 'x' from testalex["company"]
 
 function deleteX() {
@@ -95,7 +114,6 @@ function checkGroup(login) {
 };
 
 //****************************************************
-
 //check users group (any number of values), long function
 
 function checkGroup(login) {
@@ -114,7 +132,6 @@ function checkGroup(login) {
 };
 
 //****************************************************
-
 //return id (any number) if they're manager position
 
 function getAssignentManager(login) {
@@ -128,7 +145,6 @@ function getAssignentManager(login) {
 }
 
 //****************************************************
-
 //rewrite check users group, short function
 
 function checkGroup(login) {
@@ -142,7 +158,6 @@ function checkGroup(login) {
 };
 
 //****************************************************
-
 //triger: if database changed, print it
 
 var updateDb = function() {
@@ -160,7 +175,6 @@ function countUserData(user) {
 };
 
 //****************************************************
-
 //check priority
 
 var priorities = {
@@ -172,27 +186,25 @@ var priorities = {
 
 var priority = priorities[$RECORD["priority.code"]] //$RECORD is a date of current table
 
-
 //****************************************************
-
 //check location street
-
-
-var street = "";
-
-var loc = new SCFile("location");
-var resLoc = loc.doSelect("location.code=\"" + $RECORD["customer_location"] + "\"");
-if (resLoc == RC_SUCCESS) {
-  street = loc["address"].join(' ');
+function checkLocationStreet() {
+  var street = "";
+  var loc = new SCFile("location");
+  var resLoc = loc.doSelect("location.code=\"" + $RECORD["customer_location"] + "\"");
+  if (resLoc == RC_SUCCESS) {
+    street = loc["address"].join(' ');
+  }
 }
 
 //****************************************************
+//Task: check group name
 
-//check group name
-
-var group = "";
-var assign = new SCFile("assignment");
-var resAssign = assign.doSelect("se.id=\"" + $RECORD["se_assignment_group"] + "\"");
-if (resAssign == RC_SUCCESS) {
-  group = assign["name"];
+function checkGroupName() {
+  var group = "";
+  var assign = new SCFile("assignment");
+  var resAssign = assign.doSelect("se.id=\"" + $RECORD["se_assignment_group"] + "\"");
+  if (resAssign == RC_SUCCESS) {
+    group = assign["name"];
+  }
 }

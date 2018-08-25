@@ -6,7 +6,7 @@ function c(x) {
 /*Task: replace wrong values and save db
  */
 
-function replace(table) {
+function replace1(table) {
   var arr1 = new Array("SAP BPC"); //wrong values
   var arr2 = new Array("sap bpc"); //right values
   var obj = new SCFile(table);
@@ -24,10 +24,11 @@ function replace(table) {
     resObj = obj.getNext();
   }
   print(obj);
-}; //replace("secorecategorization");
+};
+
+// replace1("secorecategorization");
 
 //**********************************************************************
-
 /* the same task with an underscore function */
 
 var _ = lib.Underscore.require(); //connect library
@@ -55,7 +56,6 @@ function replace(table) {
 
 
 //***********************************************************************
-
 /*Task: keys should be lowercase, dot instead space inside. change any words from arrays
 short solution*/
 
@@ -74,21 +74,21 @@ function replacev2() {
 
 
 //***********************************************************************
-
 /*Task: keys should be lowercase, dot instead space inside. change any words from arrays
 long solution*/
 
-filter() for dbfunction myFilter (arr, cb) {
-var res = [];
-for (var i = 0; i < arr.length; i++) {
-  if (cb(arr[i])) {
-    res.push(arr[i]);
+// filter() for dbfunction
+myFilter(arr, cb) {
+  var res = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (cb(arr[i])) {
+      res.push(arr[i]);
+    }
   }
-}
-return res;
+  return res;
 }
 
-function replace() {
+function replace2() {
   var arr1 = new Array('OR', 'AND', '='); //wrong values
   var arr2 = new Array('or', 'and', '=='); //right values
   var str = "'Reported Source' = \"Web\"  OR 'Reported Source' = \"Email\" AND 'Assigned Group' = \"1-Call Center SD\""; //string for check

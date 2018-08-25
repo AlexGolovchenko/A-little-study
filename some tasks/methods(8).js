@@ -1,9 +1,10 @@
 /* task: handmade method filter()
  */
 
+//short console.log
 const c = function(x) {
   console.log(x)
-}; //short console.log
+};
 
 function myFilter(arr, cb) {
   var res = [];
@@ -114,22 +115,22 @@ function myReduce(arr, cb, startVal) {
 //c(myReduce([10,10,10], function (acc, elem) {return acc + elem}));	//30
 //c(myReduce([10,10,10], function (acc, elem) {return acc + elem}, 0));	//30
 
+//*********************************************************************
+/* task: sort array of numbers without sort()
+ */
 function sortArrInc(arr) {
-  let t;
-  for (let i = arr.length; i > 1; i--) {
-    while (arr[i] == arr[i + 1]) {
-      continue;
-    }
-    if (arr[i] - arr[i + 1] > 0) {
-      t = arr[i + 1];
-      arr[i + 1] = arr[i];
-      arr[i] = t;
-    } else {
-      t = arr[i];
-      arr[i] = arr[i + 1];
-      arr[i + 1] = t;
+  for (let j = 0; j < arr.length; j++) {
+    for (let i = 0; i < arr.length; i++) {
+      //replace items if i>i+1
+      if ((arr[i] - arr[i + 1]) > 0) {
+        arr[i] = [arr[i + 1], arr[i + 1] = arr[i]][0];
+      } else {
+        continue;
+      }
     }
   }
+  return arr;
 }
 
-c(sortArrInc([8, 4, 7, 9, 2, 2, 6, 7, 8, 4, 6, 8, 9, 7, 6]));
+let anyArr = [8, 4, 1, 7, 9, 8, 9, 7, 6];
+c(sortArrInc(anyArr));  //->1,4,6,7

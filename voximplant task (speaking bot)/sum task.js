@@ -1,7 +1,4 @@
-/*Task: сделайте простой сценарий на javascript,
-  который по входящему звонку просит звонящего ввести с клавиатуры телефона два числа,
-    а затем произносит сумму введенных чисел*/
-
+/*Task: make a simple script in JS (ES5-6) which ask caller enter two number and then say their sum*/
 
 VoxEngine.addEventListener(AppEvents.CallAlerting, e => {
   const call_customer = e.call;
